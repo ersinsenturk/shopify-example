@@ -1,0 +1,44 @@
+<div class="min-h-full flex items-center justify-center py-12 px-4">
+    <div class="max-w-md w-full space-y-8">
+        <div>
+            <h1 class="mt-6 text-center text-3xl">
+                Activate Account
+            </h1>
+            <p class="mt-4">Create your password to activate account
+            </p>
+        </div>
+        <div>
+            {% form 'activate_customer_password' %}
+                <div>
+                    <label for="password">Password
+                    </label>
+                    <input
+                        type="password"
+                        name="customer[password]"
+                        id="password"
+                        placeholder="New password"
+                        class="relative block px-3 py-2 border">
+                </div>
+                <div>
+                    <label for="confirm_password">Confirm Password
+                    </label>
+                    <input
+                        type="password"
+                        name="customer[password_confirmation]"
+                        id="confirm_password"
+                        placeholder="Confirm password"
+                        class="relative block px-3 py-2 border">
+                </div>
+                <div class="block md:flex">
+                    <button type="submit" class="w-full border ">Activate Account
+                    </button>
+                    <button
+                        type="submit"
+                        name="decline"
+                        class="w-full border ">Decline Invitation
+                    </button>
+                </div>
+            {% endform %}
+        </div>
+    </div>
+</div>
