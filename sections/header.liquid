@@ -75,12 +75,23 @@ lg:left-1/2 lg:-translate-x-1/2">
                     {% render 'icon-shopping-bag' %}
                 </a>
                 {% if shop.customer_accounts_enabled %}
-                    <a href="{{ routes.account_login_url }}" class="text-base text-gray-500 hover:text-gray-900">
-                        Login
-                    </a>
-                    <a href="{{ routes.account_register_url }}" class="text-base text-gray-500 hover:text-gray-900">
-                        Register
-                    </a>
+                    <div class="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-x-4">
+                        {% if customer %}
+                            <a href="{{ routes.account_url }}" class="text-sm font-semibold leading-6 text-gray-900">Account
+                            </a>
+                            <a href="{{ routes.account_logout_url }}" class="text-sm font-semibold leading-6 text-gray-900">Log out
+                            </a>
+                        {% else %}
+                            <a href="{{ routes.account_login_url }}" class="text-base text-gray-500 hover:text-gray-900">
+                                Login
+                            </a>
+                            <a href="{{ routes.account_register_url }}" class="text-base text-gray-500 hover:text-gray-900">
+                                Register
+                            </a>
+                        {% endif %}
+                    </div>
+
+
                 {% endif %}
             </div>
         </div>
